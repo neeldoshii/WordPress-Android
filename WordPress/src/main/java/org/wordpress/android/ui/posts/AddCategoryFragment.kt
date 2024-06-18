@@ -18,8 +18,8 @@ import org.wordpress.android.util.ToastUtils
 import javax.inject.Inject
 
 class AddCategoryFragment : AppCompatDialogFragment() {
-    private var mSite: SiteModel? = null
-    private var mBinding: AddCategoryBinding? = null
+    private var site: SiteModel? = null
+    private var binding: AddCategoryBinding? = null
 
     @set:Inject
     var mTaxonomyStore: TaxonomyStore? = null
@@ -33,11 +33,11 @@ class AddCategoryFragment : AppCompatDialogFragment() {
             MaterialAlertDialogBuilder(ContextThemeWrapper(activity, R.style.PostSettingsTheme))
         // Get the layout inflater
         val inflater = requireActivity().layoutInflater
-        mBinding = AddCategoryBinding.inflate(inflater, null, false)
+        binding = AddCategoryBinding.inflate(inflater, null, false)
 
         loadCategories()
 
-        builder.setView(mBinding!!.root)
+        builder.setView(binding!!.root)
             .setPositiveButton(android.R.string.ok, null)
             .setNegativeButton(android.R.string.cancel, null)
 
@@ -56,7 +56,7 @@ class AddCategoryFragment : AppCompatDialogFragment() {
 
     @Suppress("Deprecation")
     private fun initSite(savedInstanceState: Bundle?) {
-        mSite = if (savedInstanceState == null) {
+        site = if (savedInstanceState == null) {
             if (arguments != null) {
                 requireArguments().getSerializable(WordPress.SITE) as SiteModel?
             } else {
@@ -66,7 +66,7 @@ class AddCategoryFragment : AppCompatDialogFragment() {
             savedInstanceState.getSerializable(WordPress.SITE) as SiteModel?
         }
 
-        if (mSite == null) {
+        if (site == null) {
             ToastUtils.showToast(
                 requireActivity(),
                 R.string.blog_not_found,
@@ -77,12 +77,12 @@ class AddCategoryFragment : AppCompatDialogFragment() {
     }
 
     private fun addCategory(): Boolean {
-        val categoryName = mBinding!!.categoryName.text.toString()
-        val selectedCategory = mBinding!!.parentCategory.selectedItem as CategoryNode
+        val categoryName = binding!!.categoryName.text.toString()
+        val selectedCategory = binding!!.parentCategory.selectedItem as CategoryNode
         val parentId = selectedCategory.categoryId
 
         if (categoryName.replace(" ".toRegex(), "") == "") {
-            mBinding!!.categoryName.error = getText(R.string.cat_name_required)
+            binding!!.categoryName.error = getText(R.string.cat_name_required)
             return false
         }
 
@@ -99,7 +99,7 @@ class AddCategoryFragment : AppCompatDialogFragment() {
     private fun loadCategories() {
         val rootCategory = CategoryNode.createCategoryTreeFromList(
             mTaxonomyStore!!.getCategoriesForSite(
-                mSite!!
+                site!!
             )
         )
         val categoryLevels = CategoryNode.getSortedListOfCategoriesFromRoot(rootCategory)
@@ -111,18 +111,18 @@ class AddCategoryFragment : AppCompatDialogFragment() {
                     R.layout.categories_row_parent,
                     categoryLevels
                 )
-            mBinding!!.parentCategory.adapter = categoryAdapter
+            binding!!.parentCategory.adapter = categoryAdapter
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putSerializable(WordPress.SITE, mSite)
+        outState.putSerializable(WordPress.SITE, site)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mBinding = null
+        binding = null
     }
 
     companion object {
