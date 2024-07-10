@@ -31,7 +31,6 @@ ext {
     wordPressAztecVersion = 'v2.1.3'
     wordPressFluxCVersion = 'trunk-79f2bc35285748c715e00f2a6648ed6831632178'
     wordPressLoginVersion = '1.16.0'
-    gravatarVersion = '1.0.0'
 }
 
 measureBuilds {
