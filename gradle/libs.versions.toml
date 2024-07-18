@@ -1,10 +1,12 @@
 [versions]
 androidxComposeNavigation = '2.7.6'
 androidxWebkit =  '1.11.0'
+automatticRest = '1.0.8'
 
 [libraries]
-androidx-webkit = {group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit"}
 androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
+androidx-webkit = {group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit"}
+automattic-rest = { group = "com.automattic", name = "rest", version.ref = "automatticRest" }
 
 [plugins]
 
