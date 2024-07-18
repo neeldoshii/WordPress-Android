@@ -1,5 +1,5 @@
 [versions]
-androidxComposeNavigation = '2.7.6'
+androidxComposeNavigation = '2.7.7'
 androidxWebkit =  '1.11.0'
 automatticRest = '1.0.8'
 wordPressPersistentEditText = '1.0.2'
