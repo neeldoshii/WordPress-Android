@@ -3,6 +3,7 @@ androidxArchCore = '2.2.0'
 androidxComposeNavigation = '2.7.7'
 androidxWebkit =  '1.11.0'
 automatticRest = '1.0.8'
+googleGson = '2.10.1'
 googlePlayAppUpdate = '2.1.0'
 wordPressPersistentEditText = '1.0.2'
 
@@ -15,6 +16,7 @@ androidx-arch-coreTesting = { group = "androidx.arch.core", name = "core-testing
 androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
 androidx-webkit = {group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit"}
 automattic-rest = { group = "com.automattic", name = "rest", version.ref = "automatticRest" }
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "googleGson" }
 wordPress-persistentEditText = { group = "org.wordpress", name = "persistentedittext", version.ref = "wordPressPersistentEditText" }
 
 [plugins]
