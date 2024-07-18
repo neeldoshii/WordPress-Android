@@ -1,6 +1,7 @@
 [versions]
 androidxArchCore = '2.2.0'
 androidxComposeNavigation = '2.7.7'
+androidxCore = '1.10.0'
 androidxWebkit =  '1.11.0'
 automatticRest = '1.0.8'
 googleGson = '2.10.1'
@@ -13,6 +14,8 @@ android-play-appUpdateKtx = { group = "com.google.android.play", name = "app-upd
 androidx-arch-coreCommon = { group = "androidx.arch.core", name = "core-common", version.ref = "androidxArchCore" }
 androidx-arch-coreRuntime = { group = "androidx.arch.core", name = "core-runtime", version.ref = "androidxArchCore" }
 androidx-arch-coreTesting = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidxArchCore" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "androidxCore" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
 androidx-webkit = {group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit"}
 automattic-rest = { group = "com.automattic", name = "rest", version.ref = "automatticRest" }

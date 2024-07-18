@@ -47,7 +47,6 @@ ext {
     androidxCardviewVersion = '1.0.0'
     androidxConstraintlayoutVersion = '2.1.4'
     androidxConstraintlayoutComposeVersion = '1.0.1'
-    androidxCoreVersion = '1.10.0'
     androidxActivityVersion = '1.8.0'
     androidxFragmentVersion = '1.8.1'
     androidxGridlayoutVersion = '1.0.0'
