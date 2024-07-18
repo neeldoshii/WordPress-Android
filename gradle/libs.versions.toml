@@ -1,0 +1,8 @@
+[versions]
+androidxWebkit =  '1.11.0'
+
+[libraries]
+androidx-webkit = {group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit"}
+
+[plugins]
+
